@@ -165,7 +165,6 @@ namespace SpriteFuser
             this.ResultLabel.Size = new System.Drawing.Size(367, 13);
             this.ResultLabel.TabIndex = 13;
             this.ResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ResultLabel.Click += new System.EventHandler(this.ResultLabel_Click);
             // 
             // SpriteFuser
             // 
