@@ -56,11 +56,7 @@ namespace SpriteFuser
         private string GetOutputFileName()
         {
             string pathToFiles = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Input");
-            string[] imagePaths = Directory.GetFiles(pathToFiles);
-            //using (FileInfo info = new FileInfo(imagePaths.FirstOrDefault()))
-            //{
-
-            //}
+            string[] imagePaths = Directory.GetFiles(pathToFiles);            
             FileInfo info = new FileInfo(imagePaths.FirstOrDefault());
             string result = info.Name.Split('@').FirstOrDefault();
             return result;
@@ -200,11 +196,6 @@ namespace SpriteFuser
             {
                 this.HeightValue = Decimal.ToInt32(input.Value);
             }
-        }
-
-        private void ResultLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
