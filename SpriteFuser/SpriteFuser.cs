@@ -101,13 +101,12 @@ namespace SpriteFuser
                 List<Bitmap> rowsImages = GenerateRows(rows, columns, inputImages);
                 for (int i = 0; i < rows; i++)
                 {
-                    inputImages.Add(new List<Bitmap>());
                     for (int j = 0; j < columns; j++)
                     {
                         inputImages[i][j].Dispose();
                     }
                 }
-                Bitmap finalImage = JoinRows(rowsImages);
+                Bitmap finalImage = JoinRows(rowsImages);                
                 return finalImage;
             }
             catch
@@ -123,7 +122,7 @@ namespace SpriteFuser
             List<Bitmap> rowsImages = new List<Bitmap>();
             for(int i=0; i<rows; i++)
             {
-                Bitmap temporalRow = inputImages[i][0];
+                Bitmap temporalRow = new Bitmap(inputImages[i][0]);
                 for(int j=1; j<rowSize; j++)
                 {
                     temporalRow = JoinHorizontaly(temporalRow, inputImages[i][j]);                   
@@ -134,7 +133,7 @@ namespace SpriteFuser
         }
         private Bitmap JoinRows(List<Bitmap> rowImages)
         {
-            Bitmap temporalImage = rowImages[0];
+            Bitmap temporalImage = new Bitmap(rowImages[0]);
             for(int j = 1; j< rowImages.Count; j++)
             {
                 temporalImage = JoinVertically(temporalImage, rowImages[j]);
